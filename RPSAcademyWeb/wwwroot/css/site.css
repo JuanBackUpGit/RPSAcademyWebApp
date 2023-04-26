@@ -1,12 +1,28 @@
-
-html {
-    font-size: 16px;
-    position: relative;
-    min-height: 100%;
+/*Header*/
+header {
+    width: 100%;
+    position: fixed;
+    z-index:100;
 }
 
+.navbar {
+    background-color: black;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    color: white;
+    font-weight: 400;
+}
+
+.nav-link {
+    color: lightgray;
+    font-size: 16px;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*Body Shared*/
 body {
-    background-image: url(https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_1280.jpg);
+    background-color: antiquewhite;
     background-size: cover;
     min-height: 100vh;
     width: 100%;
@@ -19,76 +35,253 @@ body {
     height: 100%;
     padding-bottom: 50px;
 }
-.navbar-brand {
-    color: white;
+
+tr {
+    border-bottom: 1.5px solid black;
+}
+
+td {
+    border-right: 1px solid black;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+/*---------------------------------------------*/
+/*Body Home View*/
+.Title-Home {
+    text-align: center;
+    margin-top: 20px;
     font-weight: 400;
 }
 
-.display-4 {
-    margin-top: 20px;
-}
-
-header,
-footer {
-    width: 100%;
-    position: fixed;
-}
-
-footer {
-    background-color: black;
-    bottom: 0;
-    height: 60px;
-    padding-top: 10px;
-    color: gray;
-}
-.footer-info {
-    text-align: center;
-}
-
-.navbar {
-    background-color: black;
-    border-bottom: 1px solid #ddd;
-}
-
-.text-center {
-    font-family: 'Fredericka the Great', cursive;
-    color: white;
-    font-size: 20px;
-    flex: 1;
-}
-
-.nav-link {
-    color: lightgray;
-    font-size: 16px;
+.Subtext-Home {
+    font-weight: 400;
 }
 
 .instructions {
     font-size: 16px;
-    background-color: black;
+    background-color: transparent;
     padding-bottom: 30px;
-    padding-top: 3px;
-    
+    border: 5px solid black;
 }
 
 .instruction-title {
     font-size: 20px;
     background-color: black;
-    font-weight: 500;
+    font-weight: 400;
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
     border-bottom: 1px solid #ddd;
+    color: white;
 }
 
 .instruction-container {
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
+    font-weight: 400;
+}
+/*---------------------------------------------*/
+/*Body MultipleChoice View*/
+.Title-multiplechoice {
+    margin-top: 20px;
+    color: black;
+    font-size: 30px;
+    font-weight:400;
+    flex: 1;
 }
 
-.Question-Title {
-    font-family: 'Fredericka the Great', cursive;
+.Subtext-muliplechoice {
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+}
+
+.Table-AllQuestions {
+    width: 100%;
+    background-color: #BDB6AC;
+    color: black;
+    font-weight: 600;
+    flex: 1;
+    margin-left: 0;
+    margin-right: 0;
+    border-color: black;
+    border: 3px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.Table-Info {
+    color: black;
+    border-right: 1px solid black;
+    background-color: #a39d96;
+    position: sticky;
+    top: 54px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+/*---------------------------------------------*/
+/*Body ViewQuestion View*/
+.Title-ViewQuestion {
+    margin-top: 20px;
+    color: black;
+    font-size: 30px;
+    font-weight: 400;
+    flex: 1;
+}
+
+.Subtext-ViewQuestion {
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+}
+
+.Table-ViewQuestion {
+    width: 100%;
+    background-color: #BDB6AC;
+    color: black;
+    font-weight: 600;
+    flex: 1;
+    margin-left: 0;
+    margin-right: 0;
+    border-color: black;
+    border: 3px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.Table-ViewQuestion-Info {
+    color: black;
+    border-right: 1px solid black;
+    background-color: #a39d96;
+    position: sticky;
+    top: 54px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    
+}
+
+.Table-ViewQuestion-Rows {
+    height: 100px;
+}
+/*---------------------------------------------*/
+/*Body UpdateQuestion View*/
+.Title-UpdateQuestion {
+    margin-top: 20px;
+    color: black;
+    font-size: 30px;
+    font-weight: 400;
+    flex: 1;
+}
+
+.Subtext-UpdateQuestion {
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+}
+
+.control-label{
+    font-weight: 500;
+}
+
+.btn btn-primary {
+    margin-top: 10px;
+}
+/*---------------------------------------------*/
+/*Body Play Index View*/
+
+.opp-image {
+    border: 3px solid black;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-right: 60px;
+    margin-bottom: 5px;
+}
+
+.row {
+    position: center;
+    margin-left: 60px;
+}
+
+.Opp-Button {
+    text-align: center;
+    margin-bottom: 10px;
+    height: 30px;
+    background-color: black;
+    width: 200px;
     color: white;
-    font-size: 20px;
-    flex: 1;   
+    position: center;
+    font-weight: 500;
+}
+
+.hover-button {
+    margin-left: 40px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+    background-color: white;
+    font-weight: 500;
+}
+
+.hover-button::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.hover-button:hover::before {
+    opacity: 1;
+}
+/*---------------------------------------------*/
+/*Body Play Opponent Descrition View*/
+
+.Title-Description {
+    margin-top: 20px;
+    color: black;
+    font-size: 30px;
+    font-weight: 400;
+    flex: 1;
+}
+
+.Subtext-Description {
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+}
+
+.opp-image-description {
+    border: 3px solid black;
+    height: 200px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+/*-----------------------------------------------------------------------------------------*/
+/*Footer*/
+footer {
+    width: 100%;
+    position: fixed;
+    background-color: black;
+    bottom: 0;
+    height: 40px;
+    padding-top: 10px;
+    color: gray;
+}
+
+.footer-info {
+    text-align: center;
+    color: lightgray;
 }

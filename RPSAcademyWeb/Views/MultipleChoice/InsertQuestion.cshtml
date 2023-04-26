@@ -1,0 +1,32 @@
+﻿@model MultipleChoice
+<h1>Create a New Question</h1>
+@using (Html.BeginForm("InsertQuestionToDatabase", "MultipleChoice", "Post"))
+{
+    <input asp-for="QuestionNumber" type="hidden" value="" />
+
+    <label asp-for="Question" class="control-label">Question:</label>
+    <input type="text" name="Question" class="form-control" value=" " />
+
+    <label asp-for="AnswerA" class="control-label">Answer A:</label>
+    <input type="text" name="AnswerA" class="form-control" value=" " />
+
+    <label asp-for="AnswerB" class="control-label">Answer B:</label>
+    <input type="text" name="AnswerB" class="form-control" value=" " />
+
+    <label asp-for="AnswerC" class="control-label">Answer C:</label>
+    <input type="text" name="AnswerC" class="form-control" value=" " />
+
+    <label asp-for="AnswerD" class="control-label">Answer D:</label>
+    <input type="text" name="AnswerD" class="form-control" value=" " />
+
+    <label asp-for="CorrectAnswer" class="control-label">Correct Answer:</label>
+    <input type="text" name="CorrectAnswer" class="form-control" value=" " />
+
+    <label asp-for="CorrectAnswerString" class="control-label">Correct Answer String:</label>
+    <input type="text" name="CorrectAnswerString" class="form-control" value=" " />
+
+    <label asp-for="Subject" class="control-label">Subject:</label>
+    <input type="text" name="Subject" class="form-control" value=" " />
+    <p></p>
+    <input type="submit" value="Create Question" class="btn btn-primary" />
+}

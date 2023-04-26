@@ -1,0 +1,39 @@
+﻿@model MultipleChoice
+
+<h1 class="Title-UpdateQuestion">Update Question</h1>
+<p class="Subtext-UpdateQuestion">
+    Update the fields that you want to change and click the "Update Question" button to save your changes.
+</p>
+
+
+@using (Html.BeginForm("UpdateQuestionToDatabase", "MultipleChoice", "Post"))
+{
+    <input asp-for="QuestionNumber" type="hidden" value="@Model.QuestionNumber" />
+
+    <label asp-for="Question" class="control-label">Question:</label>
+    <input type ="text" name="Question" class="form-control" value="@Model.Question" />
+
+    <label asp-for="AnswerA" class="control-label">Answer A:</label>
+    <input type ="text" name="AnswerA" class="form-control" value="@Model.AnswerA" />
+
+    <label asp-for="AnswerB" class="control-label">Answer B:</label>
+    <input type ="text" name="AnswerB" class="form-control" value="@Model.AnswerB" />
+
+    <label asp-for="AnswerC" class="control-label">Answer C:</label>
+    <input type ="text" name="AnswerC" class="form-control" value="@Model.AnswerC" />
+
+    <label asp-for="AnswerD" class="control-label">Answer D:</label>
+    <input type ="text" name="AnswerD" class="form-control" value="@Model.AnswerD" />
+
+    <label asp-for="CorrectAnswer" class="control-label">Correct Answer:</label>
+    <input type ="text" name="CorrectAnswer" class="form-control" value="@Model.CorrectAnswer" />
+
+    <label asp-for="CorrectAnswerString" class="control-label">Correct Answer String:</label>
+    <input type ="text" name="CorrectAnswerString" class="form-control" value="@Model.CorrectAnswerString" />
+
+    <label asp-for="Subject" class="control-label">Subject:</label>
+    <input type ="text" name="Subject" class="form-control" value="@Model.Subject" />
+    <p></p>
+    <input type ="submit" value="Update Question" class="btn btn-primary" />
+
+}
