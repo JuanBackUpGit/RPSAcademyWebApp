@@ -5,10 +5,7 @@ namespace RPSAcademyWeb.Controllers
 {
     public class OpponentsInfoController : Controller
     {
-        public IActionResult NoviceNancy(Game game)
-        {
-            return View(game);
-        }
+    
 
         public IActionResult BeginnerBen()
         {

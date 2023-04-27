@@ -5,7 +5,7 @@
 <h1 class="Title-multiplechoice">Let's start learning! But first, I need to know your name!</h1>
 
 <p></p>
-@using (Html.BeginForm("SetUp", "Play", "Post"))
+@using (Html.BeginForm("ChooseOpp", "Play", "Post"))
 {
         <label asp-for="@Model.UsersName" class="control-label">Enter your name:</label>
         <input type="text" name ="userName" class="form-control"/>

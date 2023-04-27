@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RPSAcademyWeb.Models;
-namespace RPSAcademyWeb.Controllers;
 
+using RPSAcademyWeb.Models;
+
+namespace RPSAcademyWeb.Controllers
+{
     public class PlayController : Controller
     {
         private readonly IGameRepository repo;
@@ -14,15 +16,38 @@ namespace RPSAcademyWeb.Controllers;
         {
             return View();
         }
-        public IActionResult SetUp(string userName, Game game)
+        public IActionResult ChooseOpp(string userName)
         {
-            game = repo.SetName(userName, game);
+            Game game = new Game();
+            {
+                game.UsersName = userName;
+            }
             return View(game);
         }
-        
-        public IActionResult NoviceNancySelected(Game game)
+
+        public IActionResult SetWinPoint(string userName, string oppName, string oppImage)
         {
-            repo.SetOppNoviceNancy(game);
+            Game game = new Game();
+            {
+                game.UsersName = userName;
+                game.OppName = oppName;
+                game.OppImage = oppImage;
+            }
+            return View(game);
+        }
+
+        public IActionResult OppDescription(string userName, string oppImage, string oppName, string oppDescription, string oppStats, List<int> oppDifficulty)
+        {
+            Game game = new Game();
+            {
+                game.UsersName = userName;
+                game.OppImage = oppImage;
+                game.OppName= oppName;
+                game.OppDescription = oppDescription;
+                game.OppStats = oppStats;
+                game.OppDifficulty = oppDifficulty;
+            }
             return View(game);
         }
     }
+}
