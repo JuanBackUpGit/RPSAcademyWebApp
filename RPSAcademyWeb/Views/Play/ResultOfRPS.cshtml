@@ -1,0 +1,92 @@
+﻿@model Game
+
+<p class="Subtext-battle"><strong>First To @Model.WinPoint Points Wins The Game!</strong></p>
+<div class="row-battle">
+    <div>
+        <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="opp-image-battle" />
+        <p><strong>@Model.UserName Score:</strong> @Model.UserScore</p>
+    </div>
+    <div>
+        <img src="@Model.OppImage" alt="Image 1" class="opp-image-battle" />
+        <p><strong>@Model.OppName Score:</strong> @Model.OppScore</p>
+    </div>
+</div>
+
+
+<!--user wins round-->
+@if (Model.WinnerOfRound == 1)
+{
+    <div class="selectRPS">
+        <p class="selectRPS-line"><strong>Congratulations!</strong></p>
+        <p class="selectRPS-line">@Model.UserName Won The Round!</p>
+        <p class="selectRPS-line">You now have an opportunity to answer a question for an additional point!</p>
+        <p class="selectRPS-line">Answer carefully... if you are incorrect @Model.OppName will have a chance at answering the question for a point of their own.</p>
+    </div>
+    <div class="row-rps">
+        @using (Html.BeginForm("GetQuestionForRPS", "MultipleChoice", FormMethod.Post))
+        {
+            <input type="hidden" name="oppID" value="@Model.OppID" />
+            <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="userScore" value="@Model.UserScore" />
+            <input type="hidden" name="oppName" value="@Model.OppName" />
+            <input type="hidden" name="oppScore" value="@Model.OppScore" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <input type="hidden" name="oppImage" value="@Model.OppImage" />
+            <!--path 1 indicates user won the round-->
+            <input type="hidden" name="path" value="1" />
+            <button type="submit" class="Opp-Button">Continue</button>
+        }
+    </div>
+}
+
+
+<!--opponent wins round-->
+@if (Model.WinnerOfRound == 2)
+{
+    <div class="selectRPS">
+        <p class="selectRPS-line"><strong>You Lost.</strong></p>
+        <p class="selectRPS-line">@Model.OppName Won The Round!</p>
+        <p class="selectRPS-line">@Model.OppName now has an opportunity to answer a question for an additional point!</p>
+        <p class="selectRPS-line">if you they answer incorrect you will have a chance at answering the question for a point of your own.</p>
+    </div>
+    <div class="row-rps">
+        @using (Html.BeginForm("GetQuestionForRPS", "MultipleChoice", FormMethod.Post))
+        {
+            <input type="hidden" name="oppID" value="@Model.OppID" />
+            <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="userScore" value="@Model.UserScore" />
+            <input type="hidden" name="oppName" value="@Model.OppName" />
+            <input type="hidden" name="oppScore" value="@Model.OppScore" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <input type="hidden" name="oppImage" value="@Model.OppImage" />
+            <!--path 2 indicates user won the round-->
+            <input type="hidden" name="path" value="2" />
+            <button type="submit" class="Opp-Button">Continue</button>
+        }
+    </div>
+}
+
+
+<!--round is a draw-->
+@if (Model.WinnerOfRound == 3)
+{
+    <div class="selectRPS">
+        <p class="selectRPS-line"><strong>It's a Draw</strong></p>
+        <p class="selectRPS-line">Keep playing!</p>
+    </div>
+    <div class="row-rps">
+        @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+        {
+            <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+            <input type="hidden" name="oppID" value="@Model.OppID" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="userScore" value="@Model.UserScore" />
+            <input type="hidden" name="oppName" value="@Model.OppName" />
+            <input type="hidden" name="oppScore" value="@Model.OppScore" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+            <button type="submit" class="Opp-Button">Continue</button>
+        }
+    </div>
+}

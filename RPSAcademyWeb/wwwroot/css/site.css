@@ -189,7 +189,16 @@ a {
 
 .btn btn-primary {
     margin-top: 10px;
+    text-align: center;
+    height: 30px;
+    background-color: black;
+    width: 200px;
+    color: white;
+    position: center;
+    font-weight: 500;
 }
+
+
 /*---------------------------------------------*/
 /*Body Play Index View*/
 
@@ -201,10 +210,14 @@ a {
     margin-right: 60px;
     margin-bottom: 5px;
 }
+.col-md-4 {
+    width: 280px;
+    
+}
 
-.row {
+    .row {
     position: center;
-    margin-left: 60px;
+    margin-left: 0px;
 }
 
 .Opp-Button {
@@ -268,6 +281,94 @@ a {
     height: 200px;
     margin-bottom: 15px;
     margin-top: 10px;
+}
+
+.opp-image-battle {
+    width: 100px;
+    height: 100px;
+    border: 3px solid black;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.row-battle {
+    margin-top: -30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row-battle div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Subtext-battle {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+    margin-top: 10px
+}
+
+.selectRPS {
+    position: fixed;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    justify-content: center;
+    margin-bottom: 150px;
+    margin-top: -100px;
+}
+
+.selectRPS-line {
+    margin-top: -15px;
+    font-weight: 500;
+}
+.selectRPS-line1 {
+    margin-top: -15px;
+    font-weight: 400;
+}
+
+
+.row-rps {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 50px;
+}
+
+.rock-button {
+    background-image: url("https://thumbs.dreamstime.com/b/rock-paper-scissors-white-icon-gradient-orange-background-134933371.jpg");
+}
+
+.paper-button {
+    background-image: url("https://thumbs.dreamstime.com/b/kids-game-rock-paper-scissors-white-icon-gradient-orange-background-134992592.jpg");
+}
+
+.scissors-button {
+    background-image: url("https://thumbs.dreamstime.com/b/kids-game-rock-paper-scissors-white-icon-gradient-orange-background-134992579.jpg");
+}
+
+
+.question-prompt {
+    margin-left: 250px;
+    width: 600px
 }
 /*-----------------------------------------------------------------------------------------*/
 /*Footer*/

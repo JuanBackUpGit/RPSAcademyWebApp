@@ -1,0 +1,105 @@
+﻿@model Game
+
+<p class="Subtext-battle"><strong>First To @Model.WinPoint Points Wins The Game!</strong></p>
+<div class="row-battle">
+    <div>
+        <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="opp-image-battle" />
+        <p><strong>@Model.UserName Score:</strong> @Model.UserScore</p>
+    </div>
+    <div>
+        <img src="@Model.OppImage" alt="Image 1" class="opp-image-battle" />
+        <p><strong>@Model.OppName Score:</strong> @Model.OppScore</p>
+    </div>
+</div>
+<p>@ViewBag.CorrectAnswer</p>
+<!--user answered correctly-->
+@if(ViewBag.Path2 == 1)
+{
+    <p>user answer correctly</p>
+    @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+    {
+        <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+        <input type="hidden" name="oppID" value="@Model.OppID" />
+        <input type="hidden" name="userName" value="@Model.UserName" />
+        <input type="hidden" name="userScore" value="@Model.UserScore" />
+        <input type="hidden" name="oppName" value="@Model.OppName" />
+        <input type="hidden" name="oppScore" value="@Model.OppScore" />
+        <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+        <button type="submit" class="Opp-Button">Continue</button>
+    }
+}
+
+<!--user answered incorrectly-->
+@if (ViewBag.Path2 == 2)
+{
+    <p>user answer incorrectly</p>
+    @using (Html.BeginForm("RedemptionQuestion", "Play", FormMethod.Post))
+    {
+        <input type="hidden" name="oppID" value="@Model.OppID" />
+        <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+        <input type="hidden" name="userName" value="@Model.UserName" />
+        <input type="hidden" name="oppName" value="@Model.OppName" />
+        <input type="hidden" name="userScore" value="@Model.UserScore" />
+        <input type="hidden" name="oppScore" value="@Model.OppScore" />
+        <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+        <input type="hidden" name="subject" value="@ViewBag.Subject" />
+        <input type="hidden" name="question" value="@ViewBag.Question" />
+        <input type="hidden" name="answerA" value="@ViewBag.AnswerA" />
+        <input type="hidden" name="answerB" value="@ViewBag.AnswerB" />
+        <input type="hidden" name="answerC" value="@ViewBag.AnswerC" />
+        <input type="hidden" name="answerD" value="@ViewBag.AnswerD" />
+        <input type="hidden" name="correctAnswer" value="@ViewBag.CorrectAnswer" />
+        <input type="hidden" name="correctAnswerString" value="@ViewBag.CorrectAnswerString" />
+
+
+        <input type="hidden" name="path" value="2" />
+
+        <button type="submit" class="Opp-Button">Answer</button>
+    }
+}
+
+<!--opp answers right-->
+@if(ViewBag.Path3 == 1)
+{
+    <p>opp answer correctly</p>
+    @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+    {
+        <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+        <input type="hidden" name="oppID" value="@Model.OppID" />
+        <input type="hidden" name="userName" value="@Model.UserName" />
+        <input type="hidden" name="userScore" value="@Model.UserScore" />
+        <input type="hidden" name="oppName" value="@Model.OppName" />
+        <input type="hidden" name="oppScore" value="@Model.OppScore" />
+        <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+        <button type="submit" class="Opp-Button">Continue</button>
+    }
+}
+
+<!--opp answers incorrectly-->
+@if (ViewBag.Path3 == 2)
+{
+    <p>opp answer incorrectly</p>
+    @using (Html.BeginForm("RedemptionQuestion", "Play", FormMethod.Post))
+    {
+        <input type="hidden" name="oppID" value="@Model.OppID" />
+        <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+        <input type="hidden" name="userName" value="@Model.UserName" />
+        <input type="hidden" name="oppName" value="@Model.OppName" />
+        <input type="hidden" name="userScore" value="@Model.UserScore" />
+        <input type="hidden" name="oppScore" value="@Model.OppScore" />
+        <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+        <input type="hidden" name="subject" value="@ViewBag.Subject" />
+        <input type="hidden" name="question" value="@ViewBag.Question" />
+        <input type="hidden" name="answerA" value="@ViewBag.AnswerA" />
+        <input type="hidden" name="answerB" value="@ViewBag.AnswerB" />
+        <input type="hidden" name="answerC" value="@ViewBag.AnswerC" />
+        <input type="hidden" name="answerD" value="@ViewBag.AnswerD" />
+        <input type="hidden" name="correctAnswer" value="@ViewBag.CorrectAnswer" />
+        <input type="hidden" name="correctAnswerString" value="@ViewBag.CorrectAnswerString" />
+
+
+        <input type="hidden" name="path" value="1" />
+
+        <button type="submit" class="Opp-Button">Answer</button>
+    }
+}

@@ -1,0 +1,54 @@
+﻿@model Game
+
+
+@if (Model.UserScore < Model.WinPoint && Model.OppScore < Model.WinPoint)
+{
+    <p class="Subtext-battle"><strong>First To @Model.WinPoint Points Wins The Game!</strong></p>
+
+    <div class="row-battle">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="opp-image-battle" />
+            <p><strong>@Model.UserName Score:</strong> @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="opp-image-battle" />
+            <p><strong>@Model.OppName Score:</strong> @Model.OppScore</p>
+        </div>
+    </div>
+    <div class="selectRPS">
+        <p class="selectRPS-line">Press the corresponding hand gesture for rock, paper, or scissors</p>
+        <p class="selectRPS-line1"> Remember... rock beats scissors, scissors beats paper, and paper beats rock</p>
+    </div>
+    <p>@Model.TotalQuestionNumber</p>
+    <div class="row-rps">
+
+        @using (Html.BeginForm("ResultOfRPS", "Play", FormMethod.Post))
+        {
+            <!--adding to IActionResult parameters-->
+            <input type="hidden" name="oppID" value="@Model.OppID" />
+            <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+            <input type="hidden" name="userName" value="@Model.UserName" />
+            <input type="hidden" name="oppName" value="@Model.OppName" />
+            <input type="hidden" name="userScore" value="@Model.UserScore" />
+            <input type="hidden" name="oppScore" value="@Model.OppScore" />
+            <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+
+            <!--selects rock-->
+            <button type="submit" name="userSelectionRPS" value="1" class="circle-button rock-button"></button>
+            <!--selects paper-->
+            <button type="submit" name="userSelectionRPS" value="2" class="circle-button paper-button"></button>
+            <!--selects scissors-->
+            <button type="submit" name="userSelectionRPS" value="3" class="circle-button scissors-button"></button>
+        } 
+    </div>
+}
+
+@if (Model.UserScore == Model.WinPoint)
+{
+    <p>@Model.UserName won the game</p>
+}
+
+@if (Model.OppScore == Model.WinPoint)
+{
+    <p>@Model.OppName won the game</p>
+}

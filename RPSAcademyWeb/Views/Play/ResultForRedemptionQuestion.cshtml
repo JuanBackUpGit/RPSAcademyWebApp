@@ -1,0 +1,25 @@
+﻿@model Game
+
+<p class="Subtext-battle"><strong>First To @Model.WinPoint Points Wins The Game!</strong></p>
+<div class="row-battle">
+    <div>
+        <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="opp-image-battle" />
+        <p><strong>@Model.UserName Score:</strong> @Model.UserScore</p>
+    </div>
+    <div>
+        <img src="@Model.OppImage" alt="Image 1" class="opp-image-battle" />
+        <p><strong>@Model.OppName Score:</strong> @Model.OppScore</p>
+    </div>
+</div>
+
+@using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
+{
+    <input type="hidden" name="winPoint" value="@Model.WinPoint" />
+    <input type="hidden" name="oppID" value="@Model.OppID" />
+    <input type="hidden" name="userName" value="@Model.UserName" />
+    <input type="hidden" name="userScore" value="@Model.UserScore" />
+    <input type="hidden" name="oppName" value="@Model.OppName" />
+    <input type="hidden" name="oppScore" value="@Model.OppScore" />
+    <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
+    <button type="submit" class="Opp-Button">Continue</button>
+}
