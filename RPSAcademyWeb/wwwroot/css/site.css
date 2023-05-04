@@ -416,7 +416,7 @@ a {
     position: fixed;
     text-align: left;
     left: 50%;
-    bottom: 50px;
+    top: 250px;
     transform: translateX(-50%);
     width: 700px;
     border: 5px solid black;
@@ -502,7 +502,7 @@ a {
     position: fixed;
     text-align: left;
     left: 50%;
-    bottom: 50px;
+    top: 250px;
     transform: translateX(-50%);
     width: 700px;
     border: 5px solid black;

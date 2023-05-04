@@ -144,6 +144,21 @@
 <!--user wins game-->
 @if (Model.UserScore == Model.WinPoint)
 {
+     <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
     <div class="row-rps-instruction2">
         <p class="instruction-text-title">Congratulations @Model.UserName you won the game</p>
         <p class="instruction-text-subtext">You defeated @Model.OppName.</p>
@@ -159,6 +174,21 @@
 <!--opponent wins game-->
 @if (Model.OppScore == Model.WinPoint)
 {
+    <div class="row-rps-winpoint">
+        <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+    </div>
+
+    <div class="row-rps-scoreboard">
+        <div>
+            <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
+        </div>
+        <div>
+            <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+            <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
+        </div>
+    </div>
+
     <div class="row-rps-instruction2">
         <p class="instruction-text-title">You Lost. @Model.OppName won the game</p>
         <p class="instruction-text-subtext">You  were defeated. </p>

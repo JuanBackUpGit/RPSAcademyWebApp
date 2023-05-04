@@ -93,7 +93,7 @@ namespace RPSAcademyWeb.Controllers
 
             }
         }
-        /*public IActionResult GetQuestionForRPS(int oppID, int winPoint, string userName, int userScore, string oppName, int oppScore, int totalQuestionNumber, string oppImage, int path)
+        public IActionResult GetQuestionForRPS(int oppID, int winPoint, string userName, int userScore, string oppName, int oppScore, int totalQuestionNumber, string oppImage, int path)
         {
             ViewBag.OppID = oppID;
             ViewBag.WinPoint = winPoint;
@@ -104,13 +104,13 @@ namespace RPSAcademyWeb.Controllers
             ViewBag.OppName = oppName;
             ViewBag.OppImage = oppImage;
             ViewBag.Path = path;
-            
+
             Random random = new Random();
             var randomQuestion = random.Next(1, totalQuestionNumber);
             ViewBag.QuestionNumber = randomQuestion;
             var question = repo.MultipleChoiceQuestion(randomQuestion);
 
             return View(question);
-        }*/
+        }
     }
 }
