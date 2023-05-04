@@ -1,25 +1,27 @@
 ﻿@model Game
 
+<div class="row-rps-winpoint">
+    <p class="winpoint-text">First To @Model.WinPoint Points Wins The Game!</p>
+</div>
 
-<p class="Subtext-battle"><strong>First To @Model.WinPoint Points Wins The Game!</strong></p>
-<div class="row-battle">
+<div class="row-rps-scoreboard">
     <div>
-        <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="opp-image-battle" />
-        <p><strong>@Model.UserName Score:</strong> @Model.UserScore</p>
+        <img src="https://thumbs.dreamstime.com/b/user-profile-avatar-icon-134114292.jpg" alt="Image 1" class="rps-player-image" />
+        <p class="rps-score">@Model.UserName Score: @Model.UserScore</p>
     </div>
     <div>
-        <img src="@Model.OppImage" alt="Image 1" class="opp-image-battle" />
-        <p><strong>@Model.OppName Score:</strong> @Model.OppScore</p>
+        <img src="@Model.OppImage" alt="Image 1" class="rps-player-image" />
+        <p class="rps-score">@Model.OppName Score: @Model.OppScore</p>
     </div>
 </div>
-<p>@ViewBag.CorrectAnswer</p>
+
+<!--user gets question-->
 @if(ViewBag.Path == 1)
 {
     <div class="question-prompt">
-    <p><strong>@Model.UserName's Turn!</strong></p>
-    <p><strong>Subject:</strong> @ViewBag.Subject</p>
-    <p><strong>Question:</strong> @ViewBag.Question</p>
-
+    <p class="turn">@Model.UserName's Turn!</p>
+    <p class="subject"><strong>Subject:</strong> @ViewBag.Subject</p>
+    <p class="question"><strong>Question:</strong> @ViewBag.Question</p>
     @using (Html.BeginForm("ResultForRedemptionQuestion", "Play", FormMethod.Post))
     {
         <input type="hidden" name="oppID" value="@Model.OppID" />
@@ -40,38 +42,51 @@
 
 
         <input type="hidden" name="path" value="1" />
-            <input type="radio" name="answer" value="a" /><strong>A)</strong> @ViewBag.AnswerA
 
+
+        <div class="quiz-option">
+            <input type="radio" id="option-a" name="answer" value="a" />
+            <label for="option-a"><strong>A)</strong> @ViewBag.AnswerA</label>
+        </div>
+
+        <div class="quiz-option">
+            <input type="radio" id="option-b" name="answer" value="b" />
+            <label for="option-b"><strong>B)</strong> @ViewBag.AnswerB</label>
+        </div>
+            <P></P>
+
+        <div class="quiz-option">
+            <input type="radio" id="option-c" name="answer" value="c" />
+            <label for="option-c"><strong>C)</strong> @ViewBag.AnswerC</label>
+        </div>
+            
         <p></p>
-            
-            <input type="radio" name="answer" value="b" /><strong>B)</strong> @ViewBag.AnswerB
-            
-        <P></P>
-            
-            <input type="radio" name="answer" value="c" /><strong>C)</strong> @ViewBag.AnswerC
-            
-        <p></p>
-            
-            <input type="radio" name="answer" value="d" /><strong>D)</strong> @ViewBag.AnswerD
+
+        <div class="quiz-option">
+            <input type="radio" id="option-d" name="answer" value="d" />
+            <label for="option-d"><strong>D)</strong> @ViewBag.AnswerD</label>
+        </div>
             
         <p></p>
-            <button type="submit" class="Opp-Button">Answer</button>
+            <button type="submit" class="Primary-Button">Answer</button>
     }
-
     </div>
-
-
 }
 
+
+<!--opponent gets question-->
 @if (ViewBag.Path == 2)
 {
     <div class="question-prompt">
-        <p><strong>@Model.OppName's Turn!</strong></p>
-        <p><strong>Subject:</strong> @ViewBag.Subject</p>
-        <p><strong>Question:</strong> @ViewBag.Question</p>
+        <p class="turn">@Model.OppName's Turn!</p>
+        <p class="subject"><strong>Subject:</strong> @ViewBag.Subject</p>
+        <p class="question"><strong>Question:</strong> @ViewBag.Question</p>
         <p><strong>A)</strong> @ViewBag.AnswerA</p>
+        <p></p>
         <p><strong>B)</strong> @ViewBag.AnswerB</p>
+        <p></p>
         <p><strong>C)</strong> @ViewBag.AnswerC</p>
+        <p></p>
         <p><strong>D)</strong> @ViewBag.AnswerD</p>
         @using (Html.BeginForm("ResultForRedemptionQuestion", "Play", FormMethod.Post))
         {
@@ -94,7 +109,7 @@
 
             <input type="hidden" name="path" value="2" />
 
-            <button type="submit" class="Opp-Button">Answer</button>
+            <button type="submit" class="Primary-Button">Reveal Response</button>
         }
 
     </div>

@@ -3,22 +3,14 @@
 }
 @model Game
 
-<h1 class="Title-Description"><strong>Opponent:</strong> @Model.OppName</h1>
-<img src="@Model.OppImage" alt="Image 1" class="opp-image-description" />
-<p class="Subtext-Description"><strong>Description:</strong> @Model.OppDescription</p>
-<p class="Subtext-Description"><strong>Stats:</strong> @Model.OppStats</p>
-
-@*@using (Html.BeginForm("ChooseOpp", "Play", FormMethod.Post))
-{
-    <input type="hidden" name="userName" value="@Model.UserName" />
-    <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-    <button type="submit" class="Opp-Button">Submit Name</button>
-
-}*@
+<h1 class="Title-SetWinPoint"><strong>Opponent:</strong> @Model.OppName</h1>
+<img src="@Model.OppImage" alt="Image 1" class="opp-image-SetWinPoint" />
+<p class="Subtext-SetWinPoint"><strong>Description:</strong> @Model.OppDescription</p>
+<p class="Subtext-SetWinPoint"><strong>Stats:</strong> @Model.OppStats</p>
 <p></p>
+<p class="Subtext-SetWinPoint"><strong>Enter Win Point! Whoever reaches the win point first wins the game.</strong></p>
 @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
 {
-    <label asp-for="@Model.WinPoint" class="control-label">Enter win point:</label>
     <input type="number" class="form-control" asp-for="@Model.WinPoint" />
     <p></p>
     <input type="hidden" name="oppID" value="@Model.OppID" />
@@ -27,6 +19,6 @@
     <input type="hidden" name="oppName" value="@Model.OppName" />
     <input type="hidden" name="oppScore" value="@Model.OppScore" />
     <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-    <button type="submit" class="Opp-Button">Continue</button>
+    <button type="submit" class="Primary-Button">Continue</button>
 
 }

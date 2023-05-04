@@ -10,12 +10,10 @@ namespace RPSAcademyWeb.Controllers
     public class PlayController : Controller
     {
         private readonly IGameRepository repo;
-
         public PlayController(IGameRepository repo)
         {
             this.repo = repo;
         }
-
         public IActionResult ChooseOpp(string userName, int totalQuestionNumber)
         {
             Game game = new Game();
@@ -120,7 +118,6 @@ namespace RPSAcademyWeb.Controllers
             }
 
         }
-
         public IActionResult ResultOfQuestionForRPS(string answer, int path, int oppID, int winPoint, string userName, string oppName, int userScore, int oppScore, int totalQuestionNumber, string subject, string question, string answerA, string answerB, string answerC, string answerD, string correctAnswer, string correctAnswerString)
         {
             Random random = new Random();
@@ -198,7 +195,6 @@ namespace RPSAcademyWeb.Controllers
             }
 
         }
-
         public IActionResult RedemptionQuestion(int path, int oppID, int winPoint, string userName, string oppName, int userScore, int oppScore, int totalQuestionNumber, string subject, string question, string answerA, string answerB, string answerC, string answerD, string correctAnswer, string correctAnswerString)
         {
             Game game = new Game();
@@ -223,8 +219,6 @@ namespace RPSAcademyWeb.Controllers
             ViewBag.Path = path;
             return View(game);
         }
-    
-
         public IActionResult ResultForRedemptionQuestion(int path, string userName, int oppID, int userScore, string oppName, int oppScore, int winPoint, int totalQuestionNumber, string answer, string correctAnswer, string subject, string question, string answerA, string answerB, string answerC, string answerD, string correctAnswerString)
         {
             Random random = new Random();

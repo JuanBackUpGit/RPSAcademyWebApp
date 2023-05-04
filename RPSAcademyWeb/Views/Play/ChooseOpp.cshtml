@@ -1,6 +1,6 @@
 ﻿@model Game
 <h1 class="Title-UpdateQuestion">Welcome back, @Model.UserName, are you ready to play and learn? </h1>
-<p class="Subtext-UpdateQuestion">Choose your opponent. Each opponent has a unique chance of answering the question correctly, so choose wisely...</p>
+<p class="Subtext-ChooseOpp">Choose your opponent. Each opponent has a unique chance of answering the question correctly, so choose wisely...</p>
 
 <!--Choose opponent rows-->
 <div class="row">
@@ -15,7 +15,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Novice Nancy" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Novice Nancy</button>
+            <button type="submit" class="Primary-Button">Novice Nancy</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="0% chance of answering a question correctly.">Hover For Info!</button>
@@ -31,7 +31,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Beginner Ben" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Beginner Ben</button>
+            <button type="submit" class="Primary-Button">Beginner Ben</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="10% chance of answering a question correctly.">Hover For Info!</button>
@@ -47,7 +47,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Junior Developer Julie" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Junior Developer Julie</button>
+            <button type="submit" class="Primary-Button">Junior Developer Julie</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="20% chance of answering a question correctly.">Hover For Info!</button>
@@ -63,7 +63,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Intermediate Isaac" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Intermediate Isaac</button>
+            <button type="submit" class="Primary-Button">Intermediate Isaac</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="30% chance of answering a question correctly.">Hover For Info!</button>
@@ -79,7 +79,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Advanced Amelia" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Advanced Amelia</button>
+            <button type="submit" class="Primary-Button">Advanced Amelia</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="40% chance of answering a question correctly.">Hover For Info!</button>
@@ -95,7 +95,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Senior Developer Sam" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Senior Developer Sam</button>
+            <button type="submit" class="Primary-Button">Senior Developer Sam</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="50% chance of answering a question correctly.">Hover For Info!</button>
@@ -111,7 +111,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Expert Ethan" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Expert Ethan</button>
+            <button type="submit" class="Primary-Button">Expert Ethan</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="60% chance of answering a question correctly.">Hover For Info!</button>
@@ -127,7 +127,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Masterful Morgan" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Masterful Morgan</button>
+            <button type="submit" class="Primary-Button">Masterful Morgan</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="70% chance of answering a question correctly.">Hover For Info!</button>
@@ -143,7 +143,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Guru Giselle" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Guru Giselle</button>
+            <button type="submit" class="Primary-Button">Guru Giselle</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="80% chance of answering a question correctly.">Hover For Info!</button>
@@ -159,7 +159,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Visionary Victor" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Visionary Victor</button>
+            <button type="submit" class="Primary-Button">Visionary Victor</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="90% chance of answering a question correctly.">Hover For Info!</button>
@@ -175,7 +175,7 @@
             <input type="hidden" name="userName" value="@Model.UserName" />
             <input type="hidden" name="oppName" value="Legendary Lila" />
             <input type="hidden" name="totalQuestionNumber" value="@Model.TotalQuestionNumber" />
-            <button type="submit" class="Opp-Button">Legendary Lila</button>
+            <button type="submit" class="Primary-Button">Legendary Lila</button>
         }
         <!--hoover button to see chance of opp answering question correctly-->
         <button class="hover-button" data-tooltip="100% chance of answering a question correctly.">Hover For Info!</button>
