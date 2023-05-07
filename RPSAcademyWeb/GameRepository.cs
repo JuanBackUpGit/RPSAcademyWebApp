@@ -2,37 +2,34 @@
 using RPSAcademyWeb.Models;
 using System.Data;
 using System.Data.Common;
+using System.Diagnostics.Metrics;
 
 namespace RPSAcademyWeb
 {
     public class GameRepository : IGameRepository
     {
+        //summary: Determines the winner of a rock paper scissor round
+        //returns: 1 if user wins round
+        //         2 if opp wins round
+        //         3 if round is a draw
         public int DecisionOfRound(int userSelection)
         {
-          /*  if returned a...
-            1 = user wins round
-            2 = opp wins round
-            3 = round is a draw
-            0 is never returned  */
-            var rand = new Random();
-            var possibleSelection = new List<int> {1,2,3};
-            var oppChoice = possibleSelection[rand.Next(possibleSelection.Count)];
+            var random = new Random();
+            var possibleSelection = new List<string> {"rock","paper","scissors"};
+            var oppChoice = random.Next(1,3);
             switch(userSelection)
             {
                 //user selects rock
                 case 1:
-                    switch (oppChoice)
+                    switch (possibleSelection[oppChoice])
                     {
-                        //opp chooses rock
-                        case 1:
+                        case "rock":
                             return 3;
 
-                        //opp chooses paper
-                        case 2:
+                        case "paper":
                             return 2;
 
-                        //opp chooses scissors
-                        case 3:
+                        case "scissors":
                             return 1;
 
                         //never selected
@@ -42,18 +39,15 @@ namespace RPSAcademyWeb
 
                 //user selects paper
                 case 2:
-                    switch (oppChoice)
+                    switch (possibleSelection[oppChoice])
                     {
-                        //opp chooses rock
-                        case 1:
+                        case "rock":
                             return 1;
 
-                        //opp chooses paper
-                        case 2:
+                        case "paper":
                             return 3;
 
-                        //opp chooses scissors
-                        case 3:
+                        case "scissors":
                             return 2;
 
                         //never selected
@@ -63,18 +57,15 @@ namespace RPSAcademyWeb
 
                 //user selects scissors
                 case 3:
-                    switch (oppChoice)
+                    switch (possibleSelection[oppChoice])
                     {
-                        //opp chooses rock
-                        case 1:
+                        case "rock":
                             return 1;
 
-                        //opp chooses paper
-                        case 2:
+                        case "paper":
                             return 2;
 
-                        //opp chooses scissors
-                        case 3:
+                        case "scissors":
                             return 1;
 
                         //never selected
@@ -86,10 +77,18 @@ namespace RPSAcademyWeb
                 default: return 0;
             }
         }
+
+
+        //summary: Increases score of the int inserted in the parameters
+        //returns: score incremented by 1 point
         public int GivePoint(int scoreToIncrement)
         {
             return scoreToIncrement++;
         }
+
+
+        //summary: Sets opponents probability of answering a question correctly by the opponent ID given in the parameters
+        //returns: a list used for probability. each '1' added to the list represents 10% increase of answering question correctly
         public List<int> SetDifficulty(int oppID)
         {
             //if 1 is selected from difficulty list opp answers correctly
@@ -268,6 +267,10 @@ namespace RPSAcademyWeb
 
             }
         }
+
+
+        //summary: Sets opponents stats by the opponent ID given in the parameters
+        //returns: a string used to show user the probality of the selected opponent
         public string SetStats(int oppID)
         {
             string stats;
@@ -334,7 +337,11 @@ namespace RPSAcademyWeb
                     return stats;
 
             }
-        }
+        } 
+
+
+        //summary: Sets opponents description by the opponent ID given in the parameters
+        //returns: a string used to show user a description of the selected opponent
         public string SetDescription(int oppID)
         {
             string description;
@@ -402,6 +409,10 @@ namespace RPSAcademyWeb
 
             }
         }
+
+
+        //summary: Sets opponents image by the opponent ID given in the parameters
+        //returns: a string representing the image of the selected opponent
         public string SetOppImage(int oppID)
         {
             string image;
@@ -467,6 +478,11 @@ namespace RPSAcademyWeb
                     return image;
             }
         }
+
+
+        //summary: checks users answer to a question when playing the game.
+        //returns: 1 if user answers correctly
+        //         2 if user answers incorrectly
         public int AnswerChecker(string answer, string correctAnswer)
         {
             switch (correctAnswer.ToLower())

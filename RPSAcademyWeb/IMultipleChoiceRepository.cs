@@ -2,6 +2,7 @@
 
 namespace RPSAcademyWeb
 {
+    //summary: providing a common set of behaviors or capabilities that can be implemented by multiple classes
     public interface IMultipleChoiceRepository
     {
         public IEnumerable<MultipleChoice> GetAllProducts();

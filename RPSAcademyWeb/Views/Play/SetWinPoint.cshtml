@@ -3,12 +3,12 @@
 }
 @model Game
 
-<h1 class="Title-SetWinPoint"><strong>Opponent:</strong> @Model.OppName</h1>
+<h1 class="Title1"><strong>Opponent:</strong> @Model.OppName</h1>
 <img src="@Model.OppImage" alt="Image 1" class="opp-image-SetWinPoint" />
-<p class="Subtext-SetWinPoint"><strong>Description:</strong> @Model.OppDescription</p>
-<p class="Subtext-SetWinPoint"><strong>Stats:</strong> @Model.OppStats</p>
+<p class="Subtext1"><strong>Description:</strong> @Model.OppDescription</p>
+<p class="Subtext1"><strong>Stats:</strong> @Model.OppStats</p>
 <p></p>
-<p class="Subtext-SetWinPoint"><strong>Enter Win Point! Whoever reaches the win point first wins the game.</strong></p>
+<p class="Subtext1"><strong>Enter Win Point! Whoever reaches the win point first wins the game.</strong></p>
 @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
 {
     <input type="number" class="form-control" asp-for="@Model.WinPoint" />

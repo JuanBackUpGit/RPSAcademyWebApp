@@ -21,12 +21,11 @@
     <!--user wins round-->
     @if (Model.WinnerOfRound == 1)
     {
-        <div class="row-rps-instruction">
+        <div class="row-rps-instruction2">
             <p class="instruction-text-title">Congratulations! @Model.UserName Won The Round!</p>
             <p class="instruction-text-subtext">You now have an opportunity to answer a question for an additional point!</p>
             <p class="instruction-text-subtext">Answer carefully... if you answer incorrectly @Model.OppName will have a chance at answering the question for a point of their own.</p>
-        </div>
-        <div class="row-rps-continue">
+            <p></p>
             @using (Html.BeginForm("GetQuestionForRPS", "MultipleChoice", FormMethod.Post))
             {
                 <input type="hidden" name="oppID" value="@Model.OppID" />
@@ -47,12 +46,10 @@
     <!--opponent wins round-->
     @if (Model.WinnerOfRound == 2)
     {
-        <div class="row-rps-instruction">
+        <div class="row-rps-instruction2">
             <p class="instruction-text-title">You Lost... @Model.OppName Won The Round!</p>
             <p class="instruction-text-subtext">@Model.OppName now has an opportunity to answer a question for an additional point!</p>
             <p class="instruction-text-subtext">if you they answer incorrectly you will have a chance at answering the question for a point of your own.</p>
-        </div>
-        <div class="row-rps-continue">
             @using (Html.BeginForm("GetQuestionForRPS", "MultipleChoice", FormMethod.Post))
             {
                 <input type="hidden" name="oppID" value="@Model.OppID" />
@@ -68,6 +65,7 @@
                 <button type="submit" class="Primary-Button">Generate Question</button>
             }
         </div>
+
     }
 
     <!--round is a draw-->
@@ -76,8 +74,6 @@
         <div class="row-rps-instruction">
             <p class="instruction-text-title">It's a Draw</p>
             <p class="instruction-text-subtext">Keep playing!</p>
-        </div>
-        <div class="row-rps-continue">
             @using (Html.BeginForm("RoundOfRPS", "Play", FormMethod.Post))
             {
                 <input type="hidden" name="winPoint" value="@Model.WinPoint" />
@@ -90,6 +86,7 @@
                 <button type="submit" class="Primary-Button">Continue</button>
             }
         </div>
+        
     }
 }
 

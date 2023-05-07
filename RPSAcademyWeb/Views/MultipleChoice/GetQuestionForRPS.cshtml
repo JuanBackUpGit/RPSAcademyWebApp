@@ -82,40 +82,41 @@
 <!--opponent won round-->
 @if (ViewBag.Path == 2)
 {
-    <div class="question-prompt">
-        <p class="turn">@ViewBag.OppName's Turn</p>
-        <p class="subject"><strong>Subject:</strong> @Model.Subject</p>
-        <p class="question"><strong>Question:</strong> @Model.Question</p>
-        <p><strong>A)</strong> @Model.AnswerA</p>
-        <p></p>
-        <p><strong>B)</strong> @Model.AnswerB</p>
-        <p></p>
-        <p><strong>C)</strong> @Model.AnswerC</p>
-        <p></p>
-        <p><strong>D)</strong> @Model.AnswerD</p>
-        @using (Html.BeginForm("ResultOfQuestionForRPS", "Play", FormMethod.Post))
-        {
-            <input type="hidden" name="oppID" value="@ViewBag.OppID" />
-            <input type="hidden" name="winPoint" value="@ViewBag.WinPoint" />
-            <input type="hidden" name="userName" value="@ViewBag.UserName" />
-            <input type="hidden" name="oppName" value="@ViewBag.OppName" />
-            <input type="hidden" name="userScore" value="@ViewBag.UserScore" />
-            <input type="hidden" name="oppScore" value="@ViewBag.OppScore" />
-            <input type="hidden" name="totalQuestionNumber" value="@ViewBag.TotalQuestionNumber" />
-            <input type="hidden" name="subject" value="@Model.Subject" />
-            <input type="hidden" name="question" value="@Model.Question" />
-            <input type="hidden" name="answerA" value="@Model.AnswerA" />
-            <input type="hidden" name="answerB" value="@Model.AnswerB" />
-            <input type="hidden" name="answerC" value="@Model.AnswerC" />
-            <input type="hidden" name="answerD" value="@Model.AnswerD" />
-            <input type="hidden" name="correctAnswer" value="@Model.CorrectAnswer" />
-            <input type="hidden" name="correctAnswerString" value="@Model.CorrectAnswerString" />
+    <div class=centered-double>
+        <div class="question-prompt">
+            <p class="turn">@ViewBag.OppName's Turn</p>
+            <p class="subject"><strong>Subject:</strong> @Model.Subject</p>
+            <p class="question"><strong>Question:</strong> @Model.Question</p>
+            <p><strong>A)</strong> @Model.AnswerA</p>
+            <p></p>
+            <p><strong>B)</strong> @Model.AnswerB</p>
+            <p></p>
+            <p><strong>C)</strong> @Model.AnswerC</p>
+            <p></p>
+            <p><strong>D)</strong> @Model.AnswerD</p>
+            @using (Html.BeginForm("ResultOfQuestionForRPS", "Play", FormMethod.Post))
+            {
+                <input type="hidden" name="oppID" value="@ViewBag.OppID" />
+                <input type="hidden" name="winPoint" value="@ViewBag.WinPoint" />
+                <input type="hidden" name="userName" value="@ViewBag.UserName" />
+                <input type="hidden" name="oppName" value="@ViewBag.OppName" />
+                <input type="hidden" name="userScore" value="@ViewBag.UserScore" />
+                <input type="hidden" name="oppScore" value="@ViewBag.OppScore" />
+                <input type="hidden" name="totalQuestionNumber" value="@ViewBag.TotalQuestionNumber" />
+                <input type="hidden" name="subject" value="@Model.Subject" />
+                <input type="hidden" name="question" value="@Model.Question" />
+                <input type="hidden" name="answerA" value="@Model.AnswerA" />
+                <input type="hidden" name="answerB" value="@Model.AnswerB" />
+                <input type="hidden" name="answerC" value="@Model.AnswerC" />
+                <input type="hidden" name="answerD" value="@Model.AnswerD" />
+                <input type="hidden" name="correctAnswer" value="@Model.CorrectAnswer" />
+                <input type="hidden" name="correctAnswerString" value="@Model.CorrectAnswerString" />
 
 
-            <input type="hidden" name="path" value="2" />
+                <input type="hidden" name="path" value="2" />
  
-            <button type="submit" class="Primary-Button">Reveal Response</button>
-        }
-
+                <button type="submit" class="Primary-Button">Reveal Response</button>
+            }
+        </div>
     </div>
 }
